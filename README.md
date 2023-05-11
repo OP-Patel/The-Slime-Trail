@@ -9,6 +9,6 @@ survive, you are rewarded one point. However, every 10 seconds, the obstacles wi
 Press the SPACEBAR to jump.
 Press ESC to pause. 
 
-
+# Demo Video
 https://github.com/OP-Patel/interactive-jumping-game/assets/133251616/ab43aa25-82c7-4556-a828-aa9aa92636fc
 
