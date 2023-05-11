@@ -1,4 +1,4 @@
-# interactive-jumping-game
+# The Slime Trail 
 
 "The Slime Trail" is an interactive jumping game made in Python with Pygame. The game consists of self-made art (landing pages, buttons, and obstacles), the sprite sheet used for animation is made by tienlev (https://tienlev.itch.io/), and the game background is made by Heorhii Aryshtevych.  
 
