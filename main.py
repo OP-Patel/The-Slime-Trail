@@ -277,7 +277,7 @@ while run == True:
 
             if SPEEDUP_COUNTDOWN > 0:
                 screen.blit(SPEEDUP_text, text_rect) #draw the text
-                SPEEDUP_COUNTDOWN -= 1 / FPS #update ze counter
+                SPEEDUP_COUNTDOWN -= 1 / FPS #update the counter
 
     for event in pygame.event.get():
         #pause functionality
@@ -287,7 +287,7 @@ while run == True:
                 if pause == True:
                     game_State = 'paused'
         #speed up event
-        if event.type == SPEED_OBSTACLES: #add bit that says "SPEED UP!" with maybe a counter for levels?
+        if event.type == SPEED_OBSTACLES: 
             obstacle_speed += 0.25
         if event.type == SPEED_SCROLL:
             scroll -= 1.75
