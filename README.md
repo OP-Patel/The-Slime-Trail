@@ -4,7 +4,7 @@
 
 # Game Rules and Controls
 You play as a blue slime who faces oncoming obstacles. To survive, you must coordinately jump to avoid the obstacles. For every obstacle you
-survive, you are rewarded one point. However, every 10 seconds, the obstacles will speed up! Upon collision with an obstacle, you lose, and your score is reset.  
+survive, you are rewarded one point. However, the obstacles will speed up! Upon collision with an obstacle, you lose, and your score is reset.  
 
 Press the SPACEBAR to jump.
 Press ESC to pause. 
