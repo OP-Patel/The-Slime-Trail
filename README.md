@@ -7,6 +7,7 @@ You play as a blue slime who faces oncoming obstacles. To survive, you must coor
 survive, you are rewarded one point. However, the obstacles will speed up! Upon collision with an obstacle, you lose, and your score is reset.  
 
 Press the SPACEBAR to jump.
+
 Press ESC to pause. 
 
 # Demo Video
