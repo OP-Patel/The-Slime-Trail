@@ -11,5 +11,8 @@ Press the SPACEBAR to jump.
 Press ESC to pause. 
 
 # Demo Video
-https://github.com/OP-Patel/interactive-jumping-game/assets/133251616/ab43aa25-82c7-4556-a828-aa9aa92636fc
+
+https://github.com/OP-Patel/The-Slime-Trail/assets/133251616/acb51df3-9f5e-4992-ae78-bb65f7474a30
+
+
 
