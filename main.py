@@ -70,31 +70,31 @@ text_rect.center = (100,30)
 
 
 #Load Images & Rescale
-start_button = pygame.image.load('startbutton.png').convert_alpha()
-quit_button = pygame.image.load('quitbutton.png').convert_alpha()
-menu_button = pygame.image.load('thenewmenubutton.png').convert_alpha()
-exit_button = pygame.image.load('exitbutton.png').convert_alpha()
-resume_button = pygame.image.load('resumebutton.png').convert_alpha()
-restart_button = pygame.image.load('restartbutton.png').convert_alpha()
+start_button = pygame.image.load('images/startbutton.png').convert_alpha()
+quit_button = pygame.image.load('images/quitbutton.png').convert_alpha()
+menu_button = pygame.image.load('images/thenewmenubutton.png').convert_alpha()
+exit_button = pygame.image.load('images/exitbutton.png').convert_alpha()
+resume_button = pygame.image.load('images/resumebutton.png').convert_alpha()
+restart_button = pygame.image.load('images/restartbutton.png').convert_alpha()
 
-background = pygame.image.load('coverart.png').convert_alpha()
+background = pygame.image.load('images/coverart.png').convert_alpha()
 
-death_screen = pygame.image.load('deathscreen.png').convert_alpha()
+death_screen = pygame.image.load('images/deathscreen.png').convert_alpha()
 
-background_ingame = pygame.image.load('backgroundimage.png').convert()
+background_ingame = pygame.image.load('images/backgroundimage.png').convert()
 BG_adjustedimage = pygame.transform.scale(background_ingame, (700,500))
 
-menu_background = pygame.image.load('gamepaused.png').convert_alpha()
-covermenu_background = pygame.image.load('gamemenu.png').convert_alpha()
+menu_background = pygame.image.load('images/gamepaused.png').convert_alpha()
+covermenu_background = pygame.image.load('images/gamemenu.png').convert_alpha()
 
-obstacle_picture = pygame.image.load('obstacle 50x50.png').convert_alpha()
+obstacle_picture = pygame.image.load('images/obstacle 50x50.png').convert_alpha()
 OP_adjustedimage = pygame.transform.scale(obstacle_picture, (125,125))
 obs_rect = OP_adjustedimage.get_rect()
 
-sprite_sheet_image = pygame.image.load('slime_jump.png').convert_alpha()
+sprite_sheet_image = pygame.image.load('images/slime_jump.png').convert_alpha()
 sprite_sheet = spritesheet.SpriteSheet(sprite_sheet_image)
 
-sprite_sheet_image2 = pygame.image.load('slime_move.png').convert_alpha()
+sprite_sheet_image2 = pygame.image.load('images/slime_move.png').convert_alpha()
 sprite_sheet_2 = spritesheet.SpriteSheet(sprite_sheet_image2)
 
 #sprite frames jumping vars
@@ -288,7 +288,7 @@ while run == True:
 
             if SPEEDUP_COUNTDOWN > 0:
                 screen.blit(SPEEDUP_text, text_rect) #draw the text
-                SPEEDUP_COUNTDOWN -= 1 / FPS #update ze counter
+                SPEEDUP_COUNTDOWN -= 1 / FPS #update the counter
 
     for event in pygame.event.get():
         #if keys_pressed == ESCAPE, then pause the screen
