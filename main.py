@@ -15,12 +15,6 @@ GAME_NAME = "The Slime Trail"
 screen = pygame.display.set_mode((S_SCREENWIDTH, S_SCREENHEIGHT))
 pygame.display.set_caption(GAME_NAME)
 
-#game vars
-game_State = 'cover_page'
-clock = pygame.time.Clock()
-
-
-
 #Speed up events
 SPEED_SCROLL = pygame.USEREVENT + 1
 SPEED_OBSTACLES = pygame.USEREVENT + 2
@@ -28,6 +22,8 @@ pygame.time.set_timer(SPEED_OBSTACLES, 10000)
 pygame.time.set_timer(SPEED_SCROLL, 10000)
 
 #Beginning vars
+game_State = 'cover_page'
+clock = pygame.time.Clock()
 FPS = 80
 BLACK = (0,0,0)
 scroll = 0
@@ -37,8 +33,8 @@ active = True
 score = 0
 pause = False
 SPEEDUP_COUNTDOWN = 0
-#jumping vars
 
+#jumping vars
 y_gravity = 1 #two conditions jump_height/gravity = no remainders, and y_gravity > jumpheight/100
 jump_height = 20
 y_velocity = jump_height
@@ -47,7 +43,7 @@ y_position = 325
 x_position = 170
 velocity = 10
 
-#Load Font
+#Fonts
 boldedpixel_font = pygame.font.Font('boldedpixelfont.ttf', 50)
 score_text = boldedpixel_font.render("SCORE: " + str(score), True, BLACK)
 
@@ -107,7 +103,7 @@ frame = 0
 temp_list = []
 temp_list1 = []
 
-#Animation frames
+#animation frames
 for running_frame in range(animation_steps[0]):
     temp_list.append(sprite_sheet_2.get_image(running_frame, 123, 75, 1.55, BLACK))
 animation_list.append(temp_list)
@@ -123,13 +119,10 @@ slime_rect = animation_list[0][1].get_rect(center=(x_position,y_position))
 s_button = button.Button(350, 285, start_button, 4.5)
 me_button = button.Button(100, 420, menu_button, 3)
 qu_button = button.Button(575, 420, quit_button, 3)
-
 re_button = button.Button(350, 285, resume_button, 3)
 qu1_button = button.Button(75, 450, quit_button, 2)
 ex1_button = button.Button(350, 400, exit_button, 3)
-
 ex_button = button.Button(350, 250, exit_button, 3)
-
 res_button = button.Button(350, 275, restart_button, 3)
 
 #infinite screen movenment
@@ -142,14 +135,13 @@ run = True
 while run == True:
     clock.tick(FPS)
     screen.blit((background), (0, 0))
-
     if game_State == "cover_page":
-        score = 0  # reset score to 0
-        x_position = 165  # reset slime x position
-        y_position = 312  # reset slime y position
-        y_velocity = jump_height  # reset slime y velocity
-        obstacles = [550, 1100, 1450]  # reset obstacle positions
-        active = True  # reset obstacle activation
+        score = 0  #hard reset
+        x_position = 165 
+        y_position = 312
+        y_velocity = jump_height  
+        obstacles = [550, 1100, 1450] 
+        active = True  
         jumping = False
         pause = False
         obstacle_speed = 5
@@ -169,7 +161,7 @@ while run == True:
             game_State = "cover_page"
     if game_State == "in_menu": pygame.display.update()
 
-    elif game_State == "death_page":
+    elif game_State == "death_page": #output score acheived in run
         screen.blit(death_screen, (0, 0))
         death_score_text = death_font.render("You survived " + str(score) + " obstacles!", True, (198, 80, 90))
         if res_button.draw(screen):
@@ -192,12 +184,12 @@ while run == True:
             pause = False
             run = False
         if ex1_button.draw(screen):
-            score = 0  # reset score to 0
-            x_position = 165  # reset slime x position
-            y_position = 312  # reset slime y position
-            y_velocity = jump_height  # reset slime y velocity
-            obstacles = [550, 1100, 1450]  # reset obstacle positions
-            active = True  # reset obstacle activation
+            score = 0  #hard reset
+            x_position = 165 
+            y_position = 312  
+            y_velocity = jump_height 
+            obstacles = [550, 1100, 1450] 
+            active = True  
             jumping = False
             game_State = "cover_page"
             obstacle_speed = 5
@@ -271,18 +263,15 @@ while run == True:
                 active = False
                 game_State = "death_page"
 
-        #infinite obstacles
+        #infinite and randomly generated obstacles
         min_distance = 200
         for i in range(len(obstacles)):
-            #if active == False: #don't need these lines anymore
-                #obstacle_speed = 0
             if active:
                 obstacles[i] -= obstacle_speed
                 if obstacles[i] < -85:
                     score += 1
                     obstacles[i] = random.randint(900, 1500)
-                    #make it so that there is a minimum distance between obstacles
-
+                    #minimum distance between obstacles
                     if obstacles[i] - obstacles[i - 1] < min_distance:
                         obstacles[i] = obstacles[i - 1] + min_distance
 
@@ -291,23 +280,20 @@ while run == True:
                 SPEEDUP_COUNTDOWN -= 1 / FPS #update the counter
 
     for event in pygame.event.get():
-        #if keys_pressed == ESCAPE, then pause the screen
+        #pause functionality
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 pause = True
                 if pause == True:
                     game_State = 'paused'
-
-        if event.type == SPEED_OBSTACLES: #add bit that says "SPEED UP!" with maybe a counter for levels?
+        #speed up event
+        if event.type == SPEED_OBSTACLES: 
             obstacle_speed += 0.25
-
         if event.type == SPEED_SCROLL:
             scroll -= 1.75
             SPEEDUP_COUNTDOWN = 3
-
         if event.type == pygame.QUIT:
             run = False
-
     pygame.display.update()
 pygame.quit()
 
