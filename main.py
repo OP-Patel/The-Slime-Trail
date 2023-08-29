@@ -1,8 +1,8 @@
 import pygame
 from pygame import font
-import button
+from components import button
 import math
-import spritesheet
+from components import spritesheet
 import random
 
 pygame.init()
@@ -44,14 +44,14 @@ x_position = 170
 velocity = 10
 
 #Fonts
-boldedpixel_font = pygame.font.Font('boldedpixelfont.ttf', 50)
+boldedpixel_font = pygame.font.Font('fonts/boldedpixelfont.ttf', 50)
 score_text = boldedpixel_font.render("SCORE: " + str(score), True, BLACK)
 
-death_font = pygame.font.Font('boldedpixelfont.ttf', 40)
+death_font = pygame.font.Font('fonts/boldedpixelfont.ttf', 40)
 death_score_text = death_font.render("You survived " + str(score) + " obstacles!", True, (198, 80, 90))
 SPEEDUP_text = death_font.render("SPEED UP!", True, (198, 80, 90))
 
-escape_font = pygame.font.Font('boldedpixelfont.ttf', 15)
+escape_font = pygame.font.Font('fonts/boldedpixelfont.ttf', 15)
 escape_text = escape_font.render("Press 'ESC' to pause", True, BLACK)
 
 escape_rect = escape_text.get_rect()
